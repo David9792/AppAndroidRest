@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             {
                                 UserDataServer.TOKEN = response.getString("token");
                             }
-                            if (UserDataServer.TOKEN.length() > 150){
+                            if (UserDataServer.TOKEN.length() > 160){
 
                             }else {
                                 Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
