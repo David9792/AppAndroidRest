@@ -3,7 +3,6 @@ package com.developer.david.apprestaurant;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.app.AsyncNotedAppOp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();//oculta la barra de superior
         loadComponents();
     }
 
@@ -58,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                /* Intent intent = new Intent(root, MenuUser.class);
                 root.startActivity(intent);*/
+                //ENVIO A LA API <-------
+
                 AsyncHttpClient client = new AsyncHttpClient();
 
-                EditText email = root.findViewById(R.id.user);
-                EditText password = root.findViewById(R.id.pass);
+                EditText email = root.findViewById(R.id.email_txt);
+                EditText password = root.findViewById(R.id.password_txt);
 
                 RequestParams params = new RequestParams();
 
@@ -79,8 +81,9 @@ public class MainActivity extends AppCompatActivity {
                             {
                                 UserDataServer.TOKEN = response.getString("token");
                             }
-                            if (UserDataServer.TOKEN.length() > 160){
-
+                            if (UserDataServer.TOKEN.length() > 150){
+                                Intent intent = new Intent(root, MenuUser.class);
+                                root.startActivity(intent);
                             }else {
                                 Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
                             }

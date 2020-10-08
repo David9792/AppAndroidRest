@@ -68,7 +68,7 @@
         app:layout_constraintTop_toTopOf="@+id/container" />
 
     <EditText
-        android:id="@+id/user"
+        android:id="@+id/email_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -88,49 +88,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
-    <Button
-        android:id="@+id/logUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/rectangle"
-        android:backgroundTint="@color/colorAccent"
-        android:drawableStart="@drawable/ic_baseline_account_circle_24"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        android:text="Login"
-        android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/register"
-        app:layout_constraintHorizontal_bias="0.726"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass" />
-
-    <Button
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/rectangle"
-        android:backgroundTint="@color/colorAccent"
-        android:drawableStart="@drawable/ic_baseline_account_circle_24"
-        android:drawablePadding="16dp"
-        android:padding="16dp"
-        android:text="Register"
-        android:textColorHint="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logUser"
-        app:layout_constraintTop_toBottomOf="@+id/pass" />
-
     <EditText
-        android:id="@+id/pass"
+        android:id="@+id/password_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -151,6 +110,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user" />
+        app:layout_constraintTop_toBottomOf="@+id/email_txt" />
+
+    <Button
+        android:id="@+id/logUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="@color/colorAccent"
+        android:drawableStart="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        android:text="Login"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/register"
+        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_txt" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rectangle"
+        android:backgroundTint="@color/colorAccent"
+        android:drawableStart="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="16dp"
+        android:padding="16dp"
+        android:text="Register"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/logUser"
+        app:layout_constraintTop_toBottomOf="@+id/password_txt" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

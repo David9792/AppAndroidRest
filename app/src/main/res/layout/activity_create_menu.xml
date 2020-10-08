@@ -8,7 +8,7 @@
     tools:context=".CreateMenu">
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/precioMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -25,7 +25,25 @@
         app:layout_constraintTop_toBottomOf="@+id/nombreMenu" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/nombreMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/holo_blue_light"
+        android:textColorHint="@android:color/holo_blue_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/descripcionMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -40,10 +58,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7" />
+        app:layout_constraintTop_toBottomOf="@+id/precioMenu" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/fechaRegMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -58,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintTop_toBottomOf="@+id/descripcionMenu" />
 
     <Button
         android:id="@+id/createMenu"
@@ -95,24 +113,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <EditText
-        android:id="@+id/nombreMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/holo_blue_light"
-        android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
     <ImageView
         android:id="@+id/imageInsert"
         android:layout_width="171dp"
@@ -123,7 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9"
+        app:layout_constraintTop_toBottomOf="@+id/fechaRegMenu"
         app:srcCompat="@drawable/ic_baseline_fastfood_24" />
 
     <Button

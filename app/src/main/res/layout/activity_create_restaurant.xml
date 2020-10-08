@@ -9,51 +9,45 @@
 
     <ImageView
         android:id="@+id/imageInsertRes"
-        android:layout_width="171dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="185dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/ic_baseline_restaurant_24" />
 
     <Button
         android:id="@+id/buttonInsertRes"
-        android:layout_width="51dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="45dp"
+        android:layout_height="22dp"
         android:background="@drawable/secuirity"
         android:backgroundTint="@color/material_on_background_emphasis_medium"
         android:drawableStart="@drawable/ic_baseline_photo_camera_24"
         android:drawablePadding="16dp"
+        android:onClick="Añadir"
         android:padding="16dp"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/imageInsertRes"
-        app:layout_constraintStart_toEndOf="@+id/imageInsertRes"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/imageInsertRes"
+        app:layout_constraintStart_toStartOf="@+id/imageInsertRes"
+        app:layout_constraintTop_toBottomOf="@+id/imageInsertRes" />
 
     <Button
         android:id="@+id/createRest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="121dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rectangle"
         android:backgroundTint="@android:color/holo_blue_light"
         android:drawableStart="@drawable/ic_baseline_check_circle_24"
         android:drawablePadding="16dp"
+        android:onClick="Agregar"
         android:padding="16dp"
         android:text="Crear"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageInsertRes" />
+        app:layout_constraintEnd_toEndOf="@+id/imageInsertRes"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toStartOf="@+id/imageInsertRes"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInsertRes" />
 
     <TextView
         android:id="@+id/textView4"
@@ -74,12 +68,11 @@
         tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="match_parent"
+        android:id="@+id/direccionRes"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="12dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:ems="10"
         android:hint="Direccion"
@@ -87,62 +80,74 @@
         android:textColor="@android:color/holo_blue_light"
         android:textColorHighlight="@color/colorPrimary"
         android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toStartOf="@+id/imageInsertRes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName11" />
+        app:layout_constraintTop_toBottomOf="@+id/propietarioRes" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
-        android:layout_width="match_parent"
+        android:id="@+id/nitRes"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="12dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:ems="10"
         android:hint="Nit "
         android:inputType="textPersonName"
         android:textColor="@android:color/holo_blue_light"
         android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/imageInsertRes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreRes" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName11"
-        android:layout_width="match_parent"
+        android:id="@+id/propietarioRes"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="12dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:ems="10"
         android:hint="Propietario"
         android:inputType="textPersonName"
         android:textColor="@android:color/holo_blue_light"
         android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/imageInsertRes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
+        app:layout_constraintTop_toBottomOf="@+id/nitRes" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName12"
-        android:layout_width="match_parent"
+        android:id="@+id/nombreRes"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
         android:textColor="@android:color/holo_blue_light"
         android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toStartOf="@+id/imageInsertRes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ListView
+        android:id="@+id/listRestaurate"
+        android:layout_width="374dp"
+        android:layout_height="319dp"
+        android:background="@drawable/ic_large_triangles"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createRest" />
+
+    <ListView
+        android:id="@+id/deleteList"
+        android:layout_width="140dp"
+        android:layout_height="305dp"
+        android:background="@drawable/ic_large_triangles"
+        app:layout_constraintBottom_toBottomOf="@+id/listRestaurate"
+        app:layout_constraintEnd_toEndOf="@+id/listRestaurate"
+        app:layout_constraintTop_toTopOf="@+id/listRestaurate" />
 </androidx.constraintlayout.widget.ConstraintLayout>

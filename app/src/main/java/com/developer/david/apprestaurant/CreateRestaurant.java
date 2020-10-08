@@ -13,14 +13,26 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class CreateRestaurant extends AppCompatActivity implements View.OnClickListener {
 
     Button buttonImage, buttonCreateRestaurant ;
+    EditText nombre, nit, propietario, direccion;
+    ListView listRes, listdelete;
+    ArrayList<String> listaRestaurant;
+    ArrayAdapter adapter;
+
+    ArrayList<String> deleteRest;
+    ArrayAdapter adapter2;
 
     static final int PERMISION_CODE = 10;
     static final int code_camera = 99;
@@ -29,21 +41,67 @@ public class CreateRestaurant extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_restaurant);
+
+        nombre = (EditText) findViewById(R.id.nombreRes);
+        nit = (EditText) findViewById(R.id.nitRes);
+        propietario = (EditText) findViewById(R.id.propietarioRes);
+        direccion = (EditText) findViewById(R.id.direccionRes);
+
+        listaRestaurant = new ArrayList<>();
+        adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listaRestaurant);
+        listRes = (ListView) findViewById(R.id.listRestaurate);
+        listRes.setAdapter(adapter);
+
+        deleteRest = new ArrayList<>();
+        adapter2 = new ArrayAdapter(getApplicationContext(),android.R.layout.simple_list_item_1, deleteRest);
+        listdelete = (ListView) findViewById(R.id.deleteList);
+        listdelete.setAdapter(adapter2);
+
+        listdelete.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                Toast.makeText(CreateRestaurant.this, "La Orden ha Sido Eliminada", Toast.LENGTH_LONG).show();
+                listaRestaurant.remove(i);
+                deleteRest.remove(i);
+                adapter.notifyDataSetChanged();
+                adapter2.notifyDataSetChanged();
+            }
+        });
+
         loadComponents();
     }
 
     private void loadComponents() {
         buttonImage = this.findViewById(R.id.buttonInsertRes);
         buttonImage.setOnClickListener(this);
-        buttonCreateRestaurant = this.findViewById(R.id.createRest);
+        /*buttonCreateRestaurant = this.findViewById(R.id.createRest);
 
         buttonCreateRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, CreateMenu.class);
+                Intent intent = new Intent(root,CreateRestaurant.class);
                 root.startActivity(intent);
             }
-        });
+        });*/
+
+
+    }
+
+    public void Agregar (View view){
+        if(nombre.getText().toString().length()!=0 && nit.getText().toString().length()!=0 && propietario.getText().toString().length()!=0 && direccion.getText().toString().length()!=0){
+            listaRestaurant.add(nombre.getText().toString()+"\n"+nit.getText().toString()+"\n"+propietario.getText().toString()+"\n"+direccion.getText().toString()+"\n");
+            deleteRest.add("\n \n BORRAR");
+        }else{
+            Toast.makeText(this, "Ingrese todos los datos por favor", Toast.LENGTH_LONG).show();
+        }
+        adapter.notifyDataSetChanged();
+        adapter2.notifyDataSetChanged();
+
+        nombre.setText("");
+        nit.setText("");
+        propietario.setText("");
+        direccion.setText("");
     }
 
 

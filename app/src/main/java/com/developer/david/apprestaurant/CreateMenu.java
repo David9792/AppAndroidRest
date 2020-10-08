@@ -30,12 +30,16 @@ import java.util.List;
 
 public class CreateMenu extends AppCompatActivity implements View.OnClickListener {
     Button buttonImage, buttonCreateMenu ;
+    private Activity root = this;
     static final int PERMISION_CODE = 10;
     static final int code_camera = 99;
-    ListView mListview;
-    EditText mText;
+    ListView ListaMenu;
+    EditText Nombre;
+    EditText Precio;
+    EditText Descripcion;
+    EditText FechaReg;
     List<String>mLista = new ArrayList<>();
-    ArrayAdapter<String> mAdapter;
+    ArrayAdapter <String> mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,11 +53,46 @@ public class CreateMenu extends AppCompatActivity implements View.OnClickListene
     private void loadComponents() {
         buttonImage = this.findViewById(R.id.buttonInsert);
         buttonImage.setOnClickListener(this);
+
         /*buttonCreateMenu = findViewById(R.id.createMenu);
         buttonCreateMenu.setOnClickListener(this);
-        mListview = findViewById(R.id.listViewMenu);
-        mListview.setOnClickListener(this);
-        mText = findViewById(R.id.nombreMenu);*/
+        ListaMenu = findViewById(R.id.listViewMenu);
+        ListaMenu.setOnClickListener(this);
+        Nombre = findViewById(R.id.Nombre_menu);
+        Precio = findViewById(R.id.Precio_menu);
+        Descripcion = findViewById(R.id.DescripcionMenu);
+        FechaReg = findViewById(R.id.FechaRegMenu);
+
+        buttonCreateMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()){
+                    case R.id.createMenu: String nombre = Nombre.getText().toString().trim();
+                        mLista.add(nombre);
+                    Nombre.getText().clear();
+                    mAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,mLista);
+                        ListaMenu.setAdapter(mAdapter);
+
+                    case R.id.createMenu: String precio = Precio.getText().toString().trim();
+                    mLista.add(precio);
+                    Precio.getText().clear();
+                    mAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,mLista);
+
+                    case R.id.createMenu: String description = Descripcion.getText().toString().trim();
+                    mLista.add(description);
+                    Descripcion.getText().clear();
+                    mAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,mLista);
+
+                    case R.id.createMenu: String date = FechaReg.getText().toString().trim();
+                    mLista.add(date);
+                    FechaReg.getText().clear();
+                    mAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,mLista);
+                    ListaMenu.setAdapter(mAdapter);
+
+
+                }
+            }
+        });*/
     }
         @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
