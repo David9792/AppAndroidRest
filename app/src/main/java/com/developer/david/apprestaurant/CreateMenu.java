@@ -1,15 +1,12 @@
 package com.developer.david.apprestaurant;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -18,32 +15,54 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class CreateMenu extends AppCompatActivity implements View.OnClickListener {
     Button buttonImage, buttonCreateMenu ;
     private Activity root = this;
     static final int PERMISION_CODE = 10;
     static final int code_camera = 99;
-    ListView ListaMenu;
-    EditText Nombre;
-    EditText Precio;
-    EditText Descripcion;
-    EditText FechaReg;
-    List<String>mLista = new ArrayList<>();
-    ArrayAdapter <String> mAdapter;
+
+    EditText nombre, precio, descripcion;
+    ListView listMenu, listdelete;
+    ArrayList<String> listaMenu;
+    ArrayAdapter adapter;
+
+    ArrayList<String> deleteMenu;
+    ArrayAdapter adapter2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_menu);
+
+        nombre = (EditText) findViewById(R.id.nombreMenu);
+        precio = (EditText) findViewById(R.id.precioMenu);
+        descripcion = (EditText) findViewById(R.id.descripcionMenu);
+
+        listaMenu = new ArrayList<>();
+        adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,listaMenu);
+        listMenu = (ListView) findViewById(R.id.listViewMenu);
+        listMenu.setAdapter(adapter);
+
+        deleteMenu = new ArrayList<>();
+        adapter2 = new ArrayAdapter(getApplicationContext(),android.R.layout.simple_list_item_1, deleteMenu);
+        listdelete = (ListView) findViewById(R.id.deleteListViewMenu);
+        listdelete.setAdapter(adapter2);
+
+        listdelete.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                Toast.makeText(CreateMenu.this, "LOS DATOS FUERON ELIMIDOS", Toast.LENGTH_LONG).show();
+                listaMenu.remove(i);
+                deleteMenu.remove(i);
+                adapter.notifyDataSetChanged();
+                adapter2.notifyDataSetChanged();
+            }
+        });
 
 
 
@@ -51,7 +70,7 @@ public class CreateMenu extends AppCompatActivity implements View.OnClickListene
     }
 
     private void loadComponents() {
-        buttonImage = this.findViewById(R.id.buttonInsert);
+        buttonImage = this.findViewById(R.id.buttonInsertMenu);
         buttonImage.setOnClickListener(this);
 
         /*buttonCreateMenu = findViewById(R.id.createMenu);
@@ -94,6 +113,22 @@ public class CreateMenu extends AppCompatActivity implements View.OnClickListene
             }
         });*/
     }
+
+    public void Agregar (View view){
+        if(nombre.getText().toString().length()!=0 && precio.getText().toString().length()!=0 && descripcion.getText().toString().length()!=0 ){
+            listaMenu.add(nombre.getText().toString()+"\n"+precio.getText().toString()+"\n"+descripcion.getText().toString()+"\n");
+            deleteMenu.add("\n \n BORRAR\n");
+        }else{
+            Toast.makeText(this, "Ingrese todos los datos por favor", Toast.LENGTH_LONG).show();
+        }
+        adapter.notifyDataSetChanged();
+        adapter2.notifyDataSetChanged();
+
+        nombre.setText("");
+        precio.setText("");
+        descripcion.setText("");
+    }
+
         @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == PERMISION_CODE) {

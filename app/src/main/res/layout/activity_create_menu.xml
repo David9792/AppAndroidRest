@@ -4,97 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_vanishing_stripes"
     tools:context=".CreateMenu">
 
     <EditText
         android:id="@+id/precioMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:ems="10"
         android:hint="Precio"
         android:inputType="textPersonName"
         android:textColor="@android:color/holo_blue_light"
         android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombreMenu" />
 
     <EditText
         android:id="@+id/nombreMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
         android:textColor="@android:color/holo_blue_light"
         android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/descripcionMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:ems="10"
         android:hint="Descripcion"
         android:inputType="textPersonName"
         android:textColor="@android:color/holo_blue_light"
         android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/precioMenu" />
 
-    <EditText
-        android:id="@+id/fechaRegMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:ems="10"
-        android:hint="Fecha de Registro"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/holo_blue_light"
-        android:textColorHint="@android:color/holo_blue_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descripcionMenu" />
-
     <Button
         android:id="@+id/createMenu"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/rectangle"
         android:backgroundTint="@android:color/holo_blue_light"
         android:drawableStart="@drawable/ic_baseline_check_circle_24"
         android:drawablePadding="16dp"
+        android:onClick="Agregar"
         android:padding="16dp"
         android:text="Crear"
         android:textColorHint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageInsert" />
+        app:layout_constraintTop_toBottomOf="@+id/descripcionMenu" />
 
     <TextView
         android:id="@+id/textView3"
@@ -108,48 +83,55 @@
         android:textColor="@android:color/holo_blue_light"
         android:textSize="24dp"
         android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
     <ImageView
-        android:id="@+id/imageInsert"
-        android:layout_width="171dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/imageInsertMenu"
+        android:layout_width="150dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fechaRegMenu"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/ic_baseline_fastfood_24" />
 
     <Button
-        android:id="@+id/buttonInsert"
-        android:layout_width="51dp"
-        android:layout_height="49dp"
+        android:id="@+id/buttonInsertMenu"
+        android:layout_width="56dp"
+        android:layout_height="28dp"
+
         android:background="@drawable/secuirity"
         android:backgroundTint="@color/material_on_background_emphasis_medium"
         android:drawableStart="@drawable/ic_baseline_photo_camera_24"
         android:drawablePadding="16dp"
         android:padding="16dp"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/imageInsert"
-        app:layout_constraintStart_toEndOf="@+id/imageInsert"
-        app:layout_constraintTop_toTopOf="@+id/imageInsert"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/imageInsertMenu"
+        app:layout_constraintStart_toStartOf="@+id/imageInsertMenu"
+        app:layout_constraintTop_toBottomOf="@+id/imageInsertMenu" />
 
     <ListView
         android:id="@+id/listViewMenu"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="280dp"
+        android:layout_height="320dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createMenu" />
+
+    <ListView
+        android:id="@+id/deleteListViewMenu"
+        android:layout_width="100dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/listViewMenu"
+        app:layout_constraintTop_toBottomOf="@+id/createMenu"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

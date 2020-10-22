@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         loginAdminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, LoginAdmin.class);
+                Intent intent = new Intent(root, CrearRestaurant.class);
                 root.startActivity(intent);
             }
         });
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, RegisterUser.class);
+                Intent intent = new Intent(root, RegistroUsuario.class);
                 root.startActivity(intent);
             }
         });
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                                 UserDataServer.TOKEN = response.getString("token");
                             }
                             if (UserDataServer.TOKEN.length() > 150){
-                                Intent intent = new Intent(root, MenuUser.class);
+                                Intent intent = new Intent(root, ListRestaurant.class);
                                 root.startActivity(intent);
                             }else {
                                 Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();

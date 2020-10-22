@@ -23,7 +23,7 @@ public class LoginAdmin extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, CreateRestaurant.class);
+                Intent intent = new Intent(root, ListRestaurant.class);
                 root.startActivity(intent);
             }
         });

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.notifications.DetailsFragment"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+    <EditText
+        android:id="@+id/not_Nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Nombre"/>
+
+    <EditText
+        android:id="@+id/not_Nit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Nit"/>
+
+    <EditText
+        android:id="@+id/not_Propietario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Propietario"/>
+
+    <EditText
+        android:id="@+id/not_Calle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Calle"/>
+
+    <EditText
+        android:id="@+id/not_Telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:hint="Telefono"/>
+    <Button
+        android:id="@+id/not_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Enviar"
+        />
+
+</LinearLayout>

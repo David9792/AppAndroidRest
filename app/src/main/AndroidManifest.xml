@@ -12,15 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListRestaurant"></activity>
+        <activity android:name=".CrearMenu"></activity>
+        <activity android:name=".CrearRestaurant" />
+        <activity android:name=".RegistroUsuario" />
+        <activity
+            android:name=".NavigationMenu"
+            android:label="@string/title_activity_navigation_menu" />
+        <activity
+            android:name=".Navegation_Menu"
+            android:label="@string/title_activity_navegation__menu" />
+        <activity
+            android:name=".NavigationRestaurant"
+            android:label="@string/title_activity_navigation_restaurant" />
+        <activity android:name=".ListRestaurant" />
         <activity android:name=".ListMenu" />
-        <activity android:name=".MenuUser" />
         <activity android:name=".CreateRestaurant" />
         <activity android:name=".CreateMenu" />
-        <activity
-            android:name=".RegisterUser"
-            android:label="@string/title_activity_register_user"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginAdmin" />
         <activity android:name=".MainActivity">
             <intent-filter>

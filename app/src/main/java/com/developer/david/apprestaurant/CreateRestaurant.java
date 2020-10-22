@@ -61,7 +61,7 @@ public class CreateRestaurant extends AppCompatActivity implements View.OnClickL
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
             {
-                Toast.makeText(CreateRestaurant.this, "La Orden ha Sido Eliminada", Toast.LENGTH_LONG).show();
+                Toast.makeText(CreateRestaurant.this, "EL RESTAURANT FUE ELIMINADO", Toast.LENGTH_LONG).show();
                 listaRestaurant.remove(i);
                 deleteRest.remove(i);
                 adapter.notifyDataSetChanged();
@@ -89,9 +89,11 @@ public class CreateRestaurant extends AppCompatActivity implements View.OnClickL
     }
 
     public void Agregar (View view){
-        if(nombre.getText().toString().length()!=0 && nit.getText().toString().length()!=0 && propietario.getText().toString().length()!=0 && direccion.getText().toString().length()!=0){
-            listaRestaurant.add(nombre.getText().toString()+"\n"+nit.getText().toString()+"\n"+propietario.getText().toString()+"\n"+direccion.getText().toString()+"\n");
-            deleteRest.add("\n \n BORRAR");
+        if(nombre.getText().toString().length()!=0 && nit.getText().toString().length()!=0 &&
+                propietario.getText().toString().length()!=0 && direccion.getText().toString().length()!=0){
+            listaRestaurant.add(nombre.getText().toString()+"\n"+nit.getText().toString()+"\n"+
+                    propietario.getText().toString()+"\n"+direccion.getText().toString()+"\n");
+            deleteRest.add("\n \n \n BORRAR");
         }else{
             Toast.makeText(this, "Ingrese todos los datos por favor", Toast.LENGTH_LONG).show();
         }
