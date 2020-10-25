@@ -62,7 +62,7 @@ public class RegistroUsuario extends AppCompatActivity {
         req.put("Direccion", Direccion.getText().toString());
         req.put("Email", Email.getText().toString());
         req.put("Password", Pass.getText().toString());
-        //req.put("Roles", Roles.getText().toString());
+        req.put("Rol", "C");
 
         client.post(EndPoinds.CLIENT, req,  new JsonHttpResponseHandler(){
             @Override

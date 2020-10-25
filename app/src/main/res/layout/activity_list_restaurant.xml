@@ -4,16 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_vanishing_stripes"
-    tools:context=".ListRestaurant"
+
+    android:background="@drawable/ic_large_triangles"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ListRestaurant">
 
 
     <ListView
         android:id="@+id/listaRestaurante"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/ic_large_triangles" />
+        android:layout_height="600dp"
+        android:background="@drawable/ic_large_triangles">
+
+
+    </ListView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_plus_one_24"
+        app:backgroundTint="@color/colorPrimary" />
 
 </LinearLayout>

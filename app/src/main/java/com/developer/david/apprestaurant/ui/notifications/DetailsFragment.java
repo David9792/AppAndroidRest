@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.developer.david.apprestaurant.R;
-import com.developer.david.apprestaurant.recurso;
 import com.developer.david.apprestaurant.utils.EndPoinds;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;

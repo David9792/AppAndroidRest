@@ -1,5 +1,7 @@
 package com.developer.david.apprestaurant;
 
+import android.widget.Button;
+
 public class itemRestaurant {
 
     public String Name;
@@ -7,10 +9,10 @@ public class itemRestaurant {
     public String Owner;
     public String Streed;
     public String Phone;
+    public Button btn;
+    public String id;
 
-    public int id;
-
-    public void setNombre​(String nombre​){
+    /*public void setNombre​(String nombre​){
         this.Name = nombre​;
     }
     public void setNit​(String nit​){ this.Nid = nit​; }
@@ -18,9 +20,9 @@ public class itemRestaurant {
     public void setCalle(String calle){
         this.Streed = calle;
     }
-    public void setTelefono​(String telefono​){ this.Phone = telefono​;}
+    public void setTelefono​(String telefono​){ this.Phone = telefono​;}*/
 
-    public int getId​(){
+    public String getId​(){
         return this.id;
     }
     public String getNombre(){ return  this.Name; }
@@ -36,4 +38,5 @@ public class itemRestaurant {
     public String getTelefono​(){
         return this.Phone;
     }
+    public Button getButton(){ return this.btn; }
 }

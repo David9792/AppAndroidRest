@@ -36,35 +36,43 @@ import cz.msebera.android.httpclient.Header;
 
 public class ListRestaurant extends AppCompatActivity {
 
+    Button pedido;
+    private Activity root = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_restaurant);
 
         loadDescripcion();
+
     }
 
+
     private void loadDescripcion() {
+
+        pedido = findViewById(R.id.btnPedido);
+
+
+
         AsyncHttpClient restaurant = new AsyncHttpClient();
         RequestParams datos = new RequestParams();
         final ListView lista = (ListView)this.findViewById(R.id.listaRestaurante);
         final ArrayList<itemRestaurant> list_des = new ArrayList<itemRestaurant>();
         restaurant.get(EndPoinds.ip+"/restaurant", datos, new JsonHttpResponseHandler(){
             public void onSuccess(int statusCode, Header[] headers, JSONArray response){
-                // Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ListRestaurant.this, ""+response, Toast.LENGTH_SHORT).show();
                 try {
                     //JSONArray data = response.getJSONArray("data");
                     for(int i=0;i<response.length();i++){
                         itemRestaurant restaur = new itemRestaurant();
                         JSONObject obj = response.getJSONObject(i);
                         //Toast.makeText(MainActivity.this,""+response.length(),Toast.LENGTH_SHORT).show();
-                        restaur.id = i;
+                        restaur.id = obj.getString("_id");
                         restaur.Name= obj.getString("Nombre");
                         restaur.Nid = obj.getString("Nit");
                         restaur.Owner = obj.getString("Propietario");
                         restaur.Streed = obj.getString("Calle");
                         restaur.Phone = obj.getString("Telefono");
-
                         list_des.add(restaur);
                     }
                     DescripcionRestaurant descrip = new DescripcionRestaurant(ListRestaurant.this, list_des);
@@ -78,6 +86,18 @@ public class ListRestaurant extends AppCompatActivity {
             }
         });
     }
+    /*private void realizarPedido() {
+        pedido = this.findViewById(R.id.btnPedido);
+
+        pedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(root, NavigationRestaurant.class);
+                root.startActivity(intent);
+            }
+        });
+    }*/
+
 
     /*private Activity root = this;
     Button nuevo;

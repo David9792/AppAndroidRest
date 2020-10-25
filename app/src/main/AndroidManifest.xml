@@ -26,8 +26,6 @@
             android:label="@string/title_activity_navigation_restaurant" />
         <activity android:name=".ListRestaurant" />
         <activity android:name=".ListMenu" />
-        <activity android:name=".CreateRestaurant" />
-        <activity android:name=".CreateMenu" />
         <activity android:name=".LoginAdmin" />
         <activity android:name=".MainActivity">
             <intent-filter>

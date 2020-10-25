@@ -9,7 +9,6 @@
     tools:context=".RegistroUsuario">
 
 
-
     <EditText
         android:id="@+id/UserName"
         android:layout_width="match_parent"
@@ -24,6 +23,7 @@
         android:hint="Nombre"
         android:inputType="textPersonName"
         android:padding="16dp"
+        android:textColor="@color/design_default_color_secondary"
         android:textColorHint="@color/design_default_color_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -44,6 +44,7 @@
         android:hint="Telefono"
         android:inputType="textPersonName"
         android:padding="16dp"
+        android:textColor="@color/design_default_color_secondary"
         android:textColorHint="@color/design_default_color_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -64,6 +65,7 @@
         android:hint="Direccion"
         android:inputType="textPersonName"
         android:padding="16dp"
+        android:textColor="@color/design_default_color_secondary"
         android:textColorHint="@color/design_default_color_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -113,27 +115,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailUser" />
-
-    <EditText
-        android:id="@+id/UserPassw"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/rectangle"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="16dp"
-        android:ems="10"
-        android:hint="Repeat Password"
-        android:inputType="textPersonName"
-        android:padding="16dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordUser" />
 
 
     <Button

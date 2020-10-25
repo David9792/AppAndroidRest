@@ -31,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();//oculta la barra de superior
         loadComponents();
     }
+   /* private void realizarPedido() {
+        pedido = this.findViewById(R.id.logUser);
+
+        pedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(root, NavigationRestaurant.class);
+                root.startActivity(intent);
+            }
+        });
+    }*/
 
     private void loadComponents() {
         loginButton = this.findViewById(R.id.logUser);
@@ -40,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         loginAdminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, CrearRestaurant.class);
+                Intent intent = new Intent(root, NavigationRestaurant.class);
                 root.startActivity(intent);
             }
         });
@@ -82,10 +93,19 @@ public class MainActivity extends AppCompatActivity {
                                 UserDataServer.TOKEN = response.getString("token");
                             }
                             if (UserDataServer.TOKEN.length() > 150){
-                                Intent intent = new Intent(root, ListRestaurant.class);
+                                // Login
+                                Intent intent = new Intent();
+                                //String rol = response.getString("msn");
+                                String rol = response.getString("msn");
+                                //Toast.makeText(root, response.getString(rol), Toast.LENGTH_LONG).show();
+                                if(rol.equals("C") == true){
+                                    intent = new Intent(root, ListRestaurant.class);
+                                }
+                                else{
+                                    intent = new Intent(root, NavigationRestaurant.class);
+                                }
                                 root.startActivity(intent);
-                            }else {
-                                Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show(
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

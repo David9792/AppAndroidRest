@@ -68,3 +68,44 @@ public class CrearMenu extends AppCompatActivity {
     }
 }
 
+//PERMISOS DE CAMARA
+
+/*
+    static final int PERMISION_CODE = 10;
+    static final int code_camera = 99;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == PERMISION_CODE) {
+            if (permissions.length > 0) {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    callCamera();
+                } else {
+                    Toast.makeText(this, "No se puede continuar se Nesecita la foto", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+    }
+
+ private void requestPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            this.requestPermissions(new String[]{Manifest.permission.CAMERA}, PERMISION_CODE);
+        }
+    }
+
+public Boolean checkPermission(String permission) {
+        int result = this.checkCallingOrSelfPermission(permission);
+        return result == PackageManager.PERMISSION_GRANTED;
+    }
+
+ private void callCamera() {
+        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (camera.resolveActivity(this.getPackageManager()) != null) {
+            this.startActivityForResult(camera, code_camera);
+
+        }
+
+* */
+
+
+

@@ -62,7 +62,6 @@ public class CrearRestaurant extends AppCompatActivity {
                 try {
                     String msn = response.getString("msn");
                     Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
