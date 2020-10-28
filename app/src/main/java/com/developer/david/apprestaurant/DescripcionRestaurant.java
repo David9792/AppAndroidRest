@@ -80,9 +80,8 @@ public class DescripcionRestaurant extends BaseAdapter {
 
             @Override
             public void onClick(View view) {
-                System.out.println(UserDataServer.MSN);
+                //System.out.println(UserDataServer.MSN);
                 if (UserDataServer.MSN.equals("C")) {
-
 
                     Intent intent = new Intent(contex, ListMenu.class);
                     intent.putExtra("restaurant_id", itemRestaurant.getId​());

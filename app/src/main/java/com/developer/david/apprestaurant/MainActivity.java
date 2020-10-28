@@ -93,24 +93,33 @@ public class MainActivity extends AppCompatActivity {
                                 UserDataServer.TOKEN = response.getString("token");
                             }
                             if (UserDataServer.TOKEN.length() > 150){
-                                // Login
+
+                                Intent intent = new Intent(root,ListRestaurant.class);
+                                root.startActivity(intent);
+
+                                Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
+
+                                /*Login
                                 Intent intent = new Intent();
                                 //String rol = response.getString("msn");
-                                String rol = response.getString("msn");
+
                                 //Toast.makeText(root, response.getString(rol), Toast.LENGTH_LONG).show();
                                 intent = new Intent(root, ListRestaurant.class);
 
-                                /*if(rol.equals("C") == true){
+                                if(rol.equals("C") == true){
                                     intent = new Intent(root, ListRestaurant.class);
                                 }
                                 else{
                                     intent = new Intent(root, NavigationRestaurant.class);
-                                }*/
+                                }
 
 
                                 root.startActivity(intent);
+                                //Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();*/
+                            }else {
                                 Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
                             }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

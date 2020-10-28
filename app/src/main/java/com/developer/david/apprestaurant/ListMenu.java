@@ -46,7 +46,7 @@ public class ListMenu extends AppCompatActivity  {
                         //Toast.makeText(MainActivity.this,""+response.length(),Toast.LENGTH_SHORT).show();
                         men.idm = obj.getString("_id");
                         men.NameMenu= obj.getString("Nombre");
-                        men.Price = obj.getString("Precio");
+                        men.Price = obj.getString("Precio")+"  Bs.";
                         men.Description = obj.getString("Descripcion");
                         list_desc.add(men);
                         String id = getIntent().getStringExtra("restaurant_id"); // Este es el id que se recupera
