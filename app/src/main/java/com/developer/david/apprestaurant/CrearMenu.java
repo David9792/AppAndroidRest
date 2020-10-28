@@ -6,7 +6,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,15 @@ public class CrearMenu extends AppCompatActivity {
     private Activity root = this;
     Button RegistroMenu;
     TextView NombreMenu, PrecioMenu, DescripcionMenu;
+    /*//get the spinner from the xml.
+    Spinner dropdown = findViewById(R.id.spinner1);
+    //create a list of items for the spinner.
+    String[] items = new String[]{"1", "2", "three"};
+    //create an adapter to describe how the items are displayed, adapters are used in several places in android.
+//There are multiple variations of this, but this is the basic variant.
+    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+//set the spinners adapter to the previously created one.
+dropdown.setAdapter(adapter);*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +50,7 @@ public class CrearMenu extends AppCompatActivity {
         RegistroMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CrearMenu.this, MainActivity.class);
+                Intent intent = new Intent(CrearMenu.this, ListMenu.class);
                 senResgistrar();
                 startActivity(intent);
             }
@@ -48,9 +59,16 @@ public class CrearMenu extends AppCompatActivity {
     public void senResgistrar(){
         AsyncHttpClient client = new AsyncHttpClient();
         final RequestParams req = new RequestParams();
+
+        String restaurant_id = getIntent().getStringExtra("restaurant_id");
+
         req.put("Nombre", NombreMenu.getText().toString());
         req.put("Precio", PrecioMenu.getText().toString());
         req.put("Descripcion", DescripcionMenu.getText().toString());
+
+        req.put("restaurant_id", restaurant_id);
+
+
 
 
         client.post(EndPoinds.MENU, req, new JsonHttpResponseHandler(){

@@ -32,7 +32,7 @@ public class ListMenu extends AppCompatActivity  {
 
 
         AsyncHttpClient menu = new AsyncHttpClient();
-        RequestParams datos = new RequestParams();
+        RequestParams datos = new RequestParams("restaurant_id",getIntent().getStringExtra("restaurant_id"));
         final ListView lista = (ListView)this.findViewById(R.id.listaMenu);
         final ArrayList<itemMenu> list_desc = new ArrayList<itemMenu>();
         menu.get(EndPoinds.ip+"/menus", datos, new JsonHttpResponseHandler(){
@@ -49,7 +49,7 @@ public class ListMenu extends AppCompatActivity  {
                         men.Price = obj.getString("Precio");
                         men.Description = obj.getString("Descripcion");
                         list_desc.add(men);
-                        String id = getIntent().getStringExtra("id"); // Este es el id que se recupera
+                        String id = getIntent().getStringExtra("restaurant_id"); // Este es el id que se recupera
                         Toast.makeText(ListMenu.this, id, Toast.LENGTH_LONG).show();
                     }
                   DescripcionMenu descrip = new DescripcionMenu(ListMenu.this, list_desc);

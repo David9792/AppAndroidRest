@@ -98,14 +98,18 @@ public class MainActivity extends AppCompatActivity {
                                 //String rol = response.getString("msn");
                                 String rol = response.getString("msn");
                                 //Toast.makeText(root, response.getString(rol), Toast.LENGTH_LONG).show();
-                                if(rol.equals("C") == true){
+                                intent = new Intent(root, ListRestaurant.class);
+
+                                /*if(rol.equals("C") == true){
                                     intent = new Intent(root, ListRestaurant.class);
                                 }
                                 else{
                                     intent = new Intent(root, NavigationRestaurant.class);
-                                }
+                                }*/
+
+
                                 root.startActivity(intent);
-                                //Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show(
+                                Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

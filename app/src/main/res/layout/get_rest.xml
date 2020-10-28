@@ -60,7 +60,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
                 android:backgroundTint="@color/cardview_shadow_end_color"
-                android:text="Realizar pedido" />
+                android:text="Menu" />
 
 
         </LinearLayout>

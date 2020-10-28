@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.developer.david.apprestaurant.utils.UserDataServer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,12 +75,28 @@ public class DescripcionRestaurant extends BaseAdapter {
         });
         //Recuperando
         btnpedido.setOnClickListener(new View.OnClickListener() {
+
+
+
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(contex, ListMenu.class);
-                intent.putExtra("id",itemRestaurant.getId​());
-                contex.startActivity(intent);
+                System.out.println(UserDataServer.MSN);
+                if (UserDataServer.MSN.equals("C")) {
+
+
+                    Intent intent = new Intent(contex, ListMenu.class);
+                    intent.putExtra("restaurant_id", itemRestaurant.getId​());
+                    contex.startActivity(intent);
+                }else {
+                    Intent intent = new Intent(contex, CrearMenu.class);
+                    intent.putExtra("restaurant_id", itemRestaurant.getId​());
+                    contex.startActivity(intent);
+
+                }
+
+
             }
+
         });
 
         return view;
