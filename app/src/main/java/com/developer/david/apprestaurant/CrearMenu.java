@@ -50,7 +50,7 @@ dropdown.setAdapter(adapter);*/
         RegistroMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CrearMenu.this, ListMenu.class);
+                Intent intent = new Intent(CrearMenu.this, ListRestaurant.class);
                 senResgistrar();
                 startActivity(intent);
 

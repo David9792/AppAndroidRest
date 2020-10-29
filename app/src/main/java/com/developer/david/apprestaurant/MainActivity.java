@@ -19,9 +19,15 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
     Button loginButton, registerButton, loginAdminButton;
     private Activity root = this;
     @Override
@@ -85,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         try {
+                            UserDataServer.TOKEN="";
+
+
                             if (response.has("msn")){
                                 UserDataServer.MSN = response.getString("msn");
                             }
@@ -97,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent = new Intent(root,ListRestaurant.class);
                                 root.startActivity(intent);
 
-                                Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(root, response.getString("msn"), Toast.LENGTH_LONG).show();
 
                                 /*Login
                                 Intent intent = new Intent();
